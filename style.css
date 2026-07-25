@@ -1,0 +1,174 @@
+:root {
+            --bg: #0d1117;
+            --surface: #161b22;
+            --surface-hover: #21262d;
+            --border: #30363d;
+            --text: #e6edf3;
+            --muted: #8b949e;
+            --accent: #2f81f7;
+        }
+
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            background-color: var(--bg);
+            color: var(--text);
+            font-family: 'Inter', sans-serif;
+            line-height: 1.5;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            min-height: 100vh;
+            padding: 20px;
+        }
+
+
+        .bento-grid {
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            grid-auto-rows: minmax(120px, auto);
+            gap: 16px;
+            max-width: 900px;
+            width: 100%;
+        }
+
+        .card {
+            background: var(--surface);
+            border: 1px solid var(--border);
+            border-radius: 20px;
+            padding: 24px;
+            transition: all 0.2s ease;
+            display: flex;
+            flex-direction: column;
+            text-decoration: none;
+            color: var(--text);
+        }
+
+        .card:hover {
+            border-color: var(--muted);
+            transform: translateY(-2px);
+            background: var(--surface-hover);
+        }
+
+
+        .card-large {
+            grid-column: span 2;
+            grid-row: span 2;
+            justify-content: center;
+        }
+
+        .card-wide {
+            grid-column: span 2;
+        }
+
+        .card-tall {
+            grid-row: span 2;
+        }
+
+
+        h1 {
+            font-size: 2rem;
+            margin-bottom: 8px;
+            letter-spacing: -0.02em;
+        }
+
+        h2 {
+            font-size: 1.1rem;
+            color: var(--accent);
+            margin-bottom: 8px;
+            font-weight: 600;
+        }
+
+        p {
+            color: var(--muted);
+            font-size: 0.95rem;
+        }
+
+
+        .tags {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 8px;
+            margin-top: 16px;
+        }
+
+        .tag {
+            background: rgba(47, 129, 247, 0.1);
+            color: var(--accent);
+            padding: 4px 10px;
+            border-radius: 999px;
+            font-size: 0.75rem;
+            font-weight: 600;
+        }
+
+
+        .project-list {
+            list-style: none;
+            display: flex;
+            flex-direction: column;
+            gap: 12px;
+            margin-top: 10px;
+        }
+
+        .project-list li a {
+            color: var(--text);
+            text-decoration: none;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: 8px 0;
+            border-bottom: 1px solid var(--border);
+            transition: 0.2s;
+        }
+
+        .project-list li a:hover {
+            color: var(--accent);
+            border-bottom-color: var(--accent);
+        }
+
+        .project-list li a span {
+            color: var(--muted);
+            font-size: 0.85rem;
+        }
+
+
+        @media (max-width: 768px) {
+            .bento-grid {
+                grid-template-columns: 1fr;
+            }
+            .card-large, .card-wide, .card-tall {
+                grid-column: span 1;
+                grid-row: span 1;
+            }
+        }
+        form{
+           display: flex;
+           flex-direction: column;
+           justify-content: center;
+           align-items: center; 
+           user-select: none;
+        }
+        textarea, input{
+            resize: none;
+            background: transparent;
+            color: white;
+            border: 1px solid gray;
+            outline: none;
+            border-radius: 6px;
+            height: 40px;
+            width: 350px;
+        }
+
+        .btn{
+            background: transparent;
+            border: 1px solid gray;
+            color: white;
+            font-size: 15px;
+            width: 120px;
+            height: 30px;
+            margin-top: 6px;
+        }
