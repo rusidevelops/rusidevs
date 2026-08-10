@@ -159,8 +159,9 @@
             border: 1px solid gray;
             outline: none;
             border-radius: 6px;
-            height: 40px;
-            width: 350px;
+            width: 100%;
+            max-width: 350px;
+            field-sizing: content;
         }
 
         .btn{
